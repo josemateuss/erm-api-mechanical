@@ -94,7 +94,7 @@ CREATE TABLE "Orders" (
   "date" timestamp NOT NULL,
   "description" text NOT NULL,
   "value" decimal NOT NULL,
-  "paid" boolean NOT NULL,
+  "paid" boolean NOT NULL DEFAULT false,
   "customer_id" int NOT NULL,
   "employee_id" int NOT NULL,
   "order_item_id" int NOT NULL,
@@ -119,17 +119,16 @@ CREATE TABLE "Months" (
   "updated_at" timestamp
 );
 
-CREATE TABLE "OrderItems" (
+CREATE TABLE "Order_items" (
   "id" SERIAL PRIMARY KEY NOT NULL,
   "order_id" int NOT NULL,
   "item_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "quantity" int DEFAULT 1
 );
 
 ALTER TABLE "Customers" ADD FOREIGN KEY ("address_id") REFERENCES "Addresses" ("id");
 
-ALTER TABLE "Addresses" ADD FOREIGN KEY ("id") REFERENCES "Autoshops" ("address_id");
+ALTER TABLE "Employees" ADD FOREIGN KEY ("autoshop_id") REFERENCES "Autoshops" ("id");
 
 ALTER TABLE "Employees" ADD FOREIGN KEY ("address_id") REFERENCES "Addresses" ("id");
 
@@ -149,6 +148,6 @@ ALTER TABLE "Orders" ADD FOREIGN KEY ("employee_id") REFERENCES "Employees" ("id
 
 ALTER TABLE "Orders" ADD FOREIGN KEY ("customer_id") REFERENCES "Customers" ("id");
 
-ALTER TABLE "Orders" ADD FOREIGN KEY ("order_item_id") REFERENCES "OrderItems" ("order_id");
+ALTER TABLE "Order_items" ADD FOREIGN KEY ("order_id") REFERENCES "Orders" ("id");
 
-ALTER TABLE "Items" ADD FOREIGN KEY ("order_item_id") REFERENCES "OrderItems" ("item_id");
+ALTER TABLE "Order_items" ADD FOREIGN KEY ("item_id") REFERENCES "Items" ("id");
