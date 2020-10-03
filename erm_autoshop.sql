@@ -6,8 +6,8 @@ CREATE TABLE "Customers" (
   "email" varchar(50) UNIQUE NOT NULL,
   "password" varchar(50) NOT NULL,
   "address_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Addresses" (
@@ -19,8 +19,8 @@ CREATE TABLE "Addresses" (
   "city" varchar(50) NOT NULL,
   "state" varchar(50) NOT NULL,
   "zip_code" varchar(11) NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Vehicles" (
@@ -31,8 +31,8 @@ CREATE TABLE "Vehicles" (
   "year" int NOT NULL,
   "color" varchar(50) NOT NULL,
   "customer_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Employees" (
@@ -47,8 +47,8 @@ CREATE TABLE "Employees" (
   "address_id" int NOT NULL,
   "autoshop_id" int NOT NULL,
   "employee_type_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Autoshops" (
@@ -59,16 +59,16 @@ CREATE TABLE "Autoshops" (
   "landline" varchar(10),
   "email" varchar(50) UNIQUE NOT NULL,
   "address_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "EmployeeTypes" (
   "id" SERIAL PRIMARY KEY NOT NULL,
   "name" varchar(50) NOT NULL,
   "description" text,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Items" (
@@ -78,15 +78,15 @@ CREATE TABLE "Items" (
   "price" decimal NOT NULL,
   "category_id" int NOT NULL,
   "order_item_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Categories" (
   "id" SERIAL PRIMARY KEY NOT NULL,
   "name" varchar(50) NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Orders" (
@@ -98,8 +98,8 @@ CREATE TABLE "Orders" (
   "customer_id" int NOT NULL,
   "employee_id" int NOT NULL,
   "order_item_id" int NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Payments" (
@@ -108,22 +108,24 @@ CREATE TABLE "Payments" (
   "month_id" int NOT NULL,
   "value" decimal NOT NULL,
   "date" timestamp NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Months" (
   "id" SERIAL PRIMARY KEY NOT NULL,
   "name" varchar(10) NOT NULL,
-  "created_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 CREATE TABLE "Order_items" (
   "id" SERIAL PRIMARY KEY NOT NULL,
-  "order_id" int NOT NULL,
-  "item_id" int NOT NULL,
-  "quantity" int DEFAULT 1
+  "order_id" int,
+  "item_id" int,
+  "quantity" int DEFAULT 1,
+  "created_at" timestamp DEFAULT current_date,
+  "updated_at" timestamp DEFAULT current_date
 );
 
 ALTER TABLE "Customers" ADD FOREIGN KEY ("address_id") REFERENCES "Addresses" ("id");
