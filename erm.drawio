@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-03T15:30:38.378Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="HYUiS-YsksNRGxesl0tJ" version="13.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-03T15:31:10.748Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="lLRlsQy9h3V0B3qpVQvB" version="13.7.7" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1958" dy="1559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -324,7 +324,7 @@
         <mxCell id="GytPN-wBxECgcy7hrlEQ-41" value="name char(50) NOT NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#fff2cc;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBorderColor=none;rounded=1;strokeColor=#d6b656;" parent="GytPN-wBxECgcy7hrlEQ-39" vertex="1">
           <mxGeometry x="30" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="5-2vUzAHZTlrWetlaagz-7" value="order_date datetime NOT NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#fff2cc;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBorderColor=none;rounded=1;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="5-2vUzAHZTlrWetlaagz-7" value="date datetime NOT NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#fff2cc;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBorderColor=none;rounded=1;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="250" y="60" width="220" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5-2vUzAHZTlrWetlaagz-10" value="Vai ser preenchido com a api de CEP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFC4C4;" parent="1" vertex="1">
