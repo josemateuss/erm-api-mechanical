@@ -121,9 +121,9 @@ CREATE TABLE "Months" (
 
 CREATE TABLE "Order_items" (
   "id" SERIAL PRIMARY KEY NOT NULL,
-  "order_id" int,
-  "item_id" int,
-  "quantity" int DEFAULT 1,
+  "order_id" int NOT NULL,
+  "item_id" int NOT NULL,
+  "quantity" int NOT NULL DEFAULT 1,
   "created_at" timestamp DEFAULT current_date,
   "updated_at" timestamp DEFAULT current_date
 );
